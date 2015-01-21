@@ -17,7 +17,7 @@ limit_req_zone $cookie_{{ EDXAPP_SESSION_COOKIE_NAME }} zone=cookies:10m rate={{
 
 server {
   listen 80;
-  server_name {{ LMS_HOSTNAME }};
+  server_name beta.upex.edu.ec;
   rewrite ^/(.*) https://beta.upex.edu.ec/$1 permanent;
 }
 
@@ -56,7 +56,7 @@ error_page {{ k }} {{ v }};
   listen 81;
   {% endif %}
 
-  server_name {{ LMS_HOSTNAME }};
+  server_name beta.upex.edu.ec;
 
   access_log {{ nginx_log_dir }}/access.log {{ NGINX_LOG_FORMAT_NAME }};
   error_log {{ nginx_log_dir }}/error.log error;
