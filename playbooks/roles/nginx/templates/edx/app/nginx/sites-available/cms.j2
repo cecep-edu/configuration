@@ -45,11 +45,6 @@ error_page {{ k }} {{ v }};
   ssl_certificate_key /etc/ssl/private/{{ NGINX_SSL_KEY|basename }};
   # request the browser to use SSL for all connections
   add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
-
-  {% else %}
-  #listen {{EDXAPP_CMS_NGINX_PORT}} {{default_site}};
-  listen 81;
-  {% endif %}
   
   server_name {{ CMS_HOSTNAME }};
 
