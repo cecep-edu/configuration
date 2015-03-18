@@ -17,7 +17,7 @@
 # this is currently broken when extra vars
 # contains references to vars that are not
 # included in the play.
-EDX_ANSIBLE_DUMP_VARS: false
+EDX_ANSIBLE_DUMP_VARS: true
 
 
 edx_ansible_debian_pkgs:
