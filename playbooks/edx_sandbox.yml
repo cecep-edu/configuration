@@ -34,7 +34,7 @@
     - { role: 'edxapp', celery_worker: True }
     - edxapp
     - demo
-    - { role: 'rabbitmq', rabbitmq_ip: 'venus.upex.edu.ec' }
+    - { role: 'rabbitmq', rabbitmq_ip: 'venus.formax.edu.ec' }
     - oraclejdk
     - elasticsearch
     - forum

@@ -22,4 +22,17 @@
   roles:
     - edxlocal
     - mongo
-    - { role: 'edxapp', celery_worker: True }
+    - { role: 'rabbitmq', rabbitmq_ip: 'venus.formax.edu.ec' }
+    - oraclejdk
+    - elasticsearch
+    - { role: "xqueue", update_users: True }
+    - role: ora
+      when: ENABLE_LEGACY_ORA
+    - certs
+    - edx_ansible
+    - role: datadog
+      when: COMMON_ENABLE_DATADOG
+    - role: splunkforwarder
+      when: COMMON_ENABLE_SPLUNKFORWARDER
+    - role: newrelic
+      when: COMMON_ENABLE_NEWRELIC
