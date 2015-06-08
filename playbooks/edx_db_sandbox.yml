@@ -22,3 +22,12 @@
   roles:
     - edxlocal
     - mongo
+    - { role: 'rabbitmq', rabbitmq_ip: 'venus.formax.edu.ec' }
+    - oraclejdk
+    - elasticsearch
+    - edx_ansible
+    - role: datadog
+      when: COMMON_ENABLE_DATADOG
+    - role: splunkforwarder
+      when: COMMON_ENABLE_SPLUNKFORWARDER
+
