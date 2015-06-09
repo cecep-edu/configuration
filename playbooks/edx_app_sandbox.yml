@@ -12,6 +12,7 @@
     migrate_db: "yes"
     openid_workaround: True
     EDXAPP_LMS_NGINX_PORT: '80'
+    edx_platform_repo: 'https://github.com/cecep-edu/edx-platform.git'
     edx_platform_version: 'bitch'
     # Set to false if deployed behind another proxy/load balancer.
     NGINX_SET_X_FORWARDED_HEADERS: True
@@ -32,9 +33,7 @@
     - { role: 'edxapp', celery_worker: True }
     - edxapp
     - demo
-    - { role: 'rabbitmq', rabbitmq_ip: 'venus.formax.edu.ec' }
     - oraclejdk
-    - elasticsearch
     - forum
     - { role: notifier, NOTIFIER_DIGEST_TASK_INTERVAL: "5" }
     - { role: "xqueue", update_users: True }
