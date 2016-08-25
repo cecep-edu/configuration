@@ -30,9 +30,6 @@
       - xqueue
       nginx_default_sites:
       - lms
-    - edxlocal
-    - mongo
-    - { role: 'edxapp', celery_worker: True }
     - edxapp
     - notifier
     - analytics_api
